@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Object Detection App</title>
+</head>
+
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1"> </script>      
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"> </script>
+
+    <video id="video" autoplay muted></video>
+
+</body>
+    <script>
+        (async () => {
+           const stream = await navigator.mediaDevices.getUserMedia ({
+               audio: false,
+               video: {
+                    facingMode: 'environment'
+               }
+           })
+
+                video.srcObject = stream
+
+
+
+        })()
+
+    </script>
+    
+
+</html>
