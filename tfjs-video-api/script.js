@@ -14,13 +14,13 @@
 
     video.srcObject = stream
 
-    predict()
+    detectObject()
 
-    async function predict() {
+    async function detectObject() {
         context.drawImage(video, 0, 0, 500, 500)
-        const predictions = await model.classify(canvas)
-        status.innerHTML = `Prediction: ${predictions[0].className} / ${predictions[0].probability}`
+        const classify = await model.classify(canvas)
+        status.innerHTML = `Detected: ${classify[0].className} / ${classify[0].probability}`
 
-        requestAnimationFrame(predict)
+        requestAnimationFrame(detectObject)
     }          
 })()
